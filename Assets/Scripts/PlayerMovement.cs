@@ -38,8 +38,8 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal"); // 방향키 혹은 A/D
-        movement.y = Input.GetAxisRaw("Vertical"); // 방향키 혹은 W/S
+        movement.x = Input.GetAxisRaw("Horizontal"); 
+        movement.y = Input.GetAxisRaw("Vertical"); 
 
         // 반대 방향으로 움직일 때 이미지를 반전
         if (movement.x < 0)
@@ -62,10 +62,8 @@ public class NewBehaviourScript : MonoBehaviour
     }
     void FixedUpdate()
     {
-        // 물리적으로 캐릭터 이동
         
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-        Debug.Log($"movement : {movement} moveSpeed : {moveSpeed}");
         
     }
 }
