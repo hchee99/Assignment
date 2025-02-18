@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 37948056}
   - component: {fileID: 37948057}
   - component: {fileID: 37948059}
+  - component: {fileID: 37948060}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -264,8 +265,8 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: afa60b6bb4a77df4ca0c0fbce716915f, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -308,6 +309,25 @@ CircleCollider2D:
   m_Offset: {x: 0.06990929, y: -1.101071}
   serializedVersion: 2
   m_Radius: 0.48856604
+--- !u!114 &37948060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37948051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69682b55480c82446a468c182ef36ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageQ: 20
+  damageW: 20
+  damageE: 20
+  attackRange: 2
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &235974715
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,13 +354,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235974715}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.78594774, y: 0.61824596, z: -0.0063911243, w: 0.0041672904}
-  m_LocalPosition: {x: 0.19, y: 1.19, z: -0}
+  m_LocalRotation: {x: -0.7907434, y: -0.61210024, z: -0.0055957935, w: -0.0051865084}
+  m_LocalPosition: {x: 0.03, y: 0.88, z: 0}
   m_LocalScale: {x: 0.95880014, y: 1.0141497, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 37948052}
-  m_LocalEulerAnglesHint: {x: -180.4108, y: -0.76626027, z: -839.64136}
+  m_LocalEulerAnglesHint: {x: -180.36447, y: 0.46293575, z: -690.6811}
 --- !u!111 &235974717
 Animation:
   m_ObjectHideFlags: 0
@@ -353,6 +373,7 @@ Animation:
   m_Animation: {fileID: 7400000, guid: 254c3bcdea03ee746a22ba87124e6cec, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 254c3bcdea03ee746a22ba87124e6cec, type: 2}
+  - {fileID: 7400000, guid: be12585dfc20da442935ce7eaf8e09ed, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
