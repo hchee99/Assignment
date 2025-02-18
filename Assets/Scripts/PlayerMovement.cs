@@ -21,6 +21,20 @@ public class NewBehaviourScript : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    private static bool instanceExists = false;
+
+    void Awake()
+    {
+        if (!instanceExists)
+        {
+            DontDestroyOnLoad(gameObject);
+            instanceExists = true;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
