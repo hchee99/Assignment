@@ -756,8 +756,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1717129672}
-  enemyDieobject: {fileID: 0}
-  portalPrefab: {fileID: 0}
+  lowMoneyDropPrefab: {fileID: 2503861475932269573, guid: e91b7ed4faa1dcf4f83f56c74de84c6e, type: 3}
+  mediumMoneyDropPrefab: {fileID: 6122188713743991711, guid: af6fb564a24953643a9d8c98ef5aa081, type: 3}
+  manyMoneyDropPrefab: {fileID: 5804956183123080704, guid: 5317364ffc5b2a54fb1fe15bc8883735, type: 3}
+  veryManyMoneyDropPrefab: {fileID: 417769066955613666, guid: 848562c880d1b4f49b862989e39b36a5, type: 3}
 --- !u!61 &1717129671
 BoxCollider2D:
   m_ObjectHideFlags: 0
