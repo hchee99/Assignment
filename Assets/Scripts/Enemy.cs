@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public GameObject enemyDieObject;
+    
+    public Animator animator;
+    public GameObject enemyDieobject;
+    public GameObject portalPrefab;
 
     private int enemyHealth;
+    private bool isDead = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,36 +32,39 @@ public class Enemy : MonoBehaviour
         else
         {
             enemyHealth = Random.Range(188, 201);
-        }
-
-        Debug.Log(gameObject.name + "의 체력: " + enemyHealth);
-
-        if (enemyDieObject != null)
-        {
-            enemyDieObject.SetActive(false);
-        }
+        }      
     }
 
     public void TakeDamage(int damage)
     {
+        if (isDead) return;
+
         enemyHealth -= damage;
 
         if (enemyHealth <= 0)
         {
             Die();
         }
-
     }
     void Die()
     {
-        void Die()
+        isDead = true;
+
+        if (animator != null)
         {
-            if (enemyDieObject != null)
-            {
-                enemyDieObject.transform.position = transform.position;
-                enemyDieObject.SetActive(true);
-            }
-            gameObject.SetActive(false);
+            animator.SetBool("IsDead", true);
         }
+
+        // enemyDieObject 활성화 (필요한 경우)
+       
+
+        // 포탈 생성: portalPrefab을 Enemy의 위치에서 인스턴스화
+        if (portalPrefab != null)
+        {
+            Instantiate(portalPrefab, transform.position, Quaternion.identity);
+        }
+
+
+
     }
 }

@@ -321,9 +321,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69682b55480c82446a468c182ef36ad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageQ: 20
-  damageW: 20
-  damageE: 20
+  damageQ: 5
+  damageW: 5
+  damageE: 5
   Hitbox: {fileID: 1381254777}
   hitboxActiveTime: 0.1
   hitboxPositionRight: {x: 1, y: 0, z: 0}
