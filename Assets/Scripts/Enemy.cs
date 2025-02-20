@@ -6,11 +6,10 @@ public class Enemy : MonoBehaviour
 {
     public Animator animator;
 
-    // 각 보상 프리팹을 Inspector에서 할당 (Project 창의 프리팹 에셋)
-    public GameObject lowMoneyDropPrefab;      // 보상: 5000
-    public GameObject mediumMoneyDropPrefab;   // 보상: 50000
-    public GameObject manyMoneyDropPrefab;     // 보상: 500000
-    public GameObject veryManyMoneyDropPrefab; // 보상: 5000000
+    public GameObject lowMoneyDropPrefab;      
+    public GameObject mediumMoneyDropPrefab;   
+    public GameObject manyMoneyDropPrefab;     
+    public GameObject veryManyMoneyDropPrefab; 
 
     private int enemyHealth;
     private bool isDead = false;
@@ -40,8 +39,6 @@ public class Enemy : MonoBehaviour
             enemyHealth = Random.Range(188, 201);
             rewardMoney = 5000000;
         }
-
-        Debug.Log($"{gameObject.name} 체력: {enemyHealth}, 보상: {rewardMoney}");
     }
 
     public void TakeDamage(int damage)
@@ -65,7 +62,6 @@ public class Enemy : MonoBehaviour
             animator.SetBool("IsDead", true);
         }
 
-        // 보상 금액에 따라 해당하는 돈 드랍 프리팹을 적의 위치에서 인스턴스화
         if (rewardMoney == 5000)
         {
             Instantiate(lowMoneyDropPrefab, transform.position, Quaternion.identity);
@@ -82,9 +78,6 @@ public class Enemy : MonoBehaviour
         {
             Instantiate(veryManyMoneyDropPrefab, transform.position, Quaternion.identity);
         }
-
-        Debug.Log("Enemy defeated! Reward money: " + rewardMoney);
-
     }
 
 }

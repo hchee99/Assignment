@@ -29,23 +29,22 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal"); 
         movement.y = Input.GetAxisRaw("Vertical"); 
 
-        // 반대 방향으로 움직일 때 이미지를 반전
         if (movement.x < 0)
         {
-            spriteRenderer.flipX = true; // 왼쪽으로 이동 시 이미지 반전
+            spriteRenderer.flipX = true; 
         }
         else if (movement.x > 0)
         {
-            spriteRenderer.flipX = false; // 오른쪽으로 이동 시 이미지 원상태
+            spriteRenderer.flipX = false; 
         }
 
         if (movement.x != 0 || movement.y != 0)
         {
-            animator.SetBool("IsMoving", true); // 이동 중
+            animator.SetBool("IsMoving", true); 
         }
         else
         {
-            animator.SetBool("IsMoving", false); // 이동하지 않으면 대기 상태
+            animator.SetBool("IsMoving", false); 
         }
     }
     void FixedUpdate()

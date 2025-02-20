@@ -23,7 +23,6 @@ public class ColliderControl : MonoBehaviour
         if (Collider2D != null)
         {
             Collider2D.enabled = true;
-            Debug.Log("EnableCollision »£√‚µ ");
         }
     }
 
